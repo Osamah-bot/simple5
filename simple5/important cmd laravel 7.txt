@@ -1,0 +1,63 @@
+/************
+php artisan --version
+php artisan migrate "for migrate db so xampp server must be on"
+php artisan serve port=90000 "run the all project"
+
+1
+composer create-project "path optional" laravel/laravel first_laravel_project  "6.*"  "for ver 6"
+2
+
+composer require laravel/ui "^1.2" "for ver 6" //íËÈÊ áäÇ ÇáÑÇæÊ ÊÈÚäÇ æÇáİíæÒ ÇáÊí Êßæä ÏíİæáÊ 
+or
+ composer require --dev laravel/ui  "for 7 an up"
+
+ 
+  composer require --dev laravel/ui:^7.*  "for 7 an up"
+
+3
+php artisan ui vue --auth // íÑÈØ Èíä ÇáÑæÇÊ æÇáßäÊÑæáÑ æÇáİíæ ÊÈÚ ÇáÑÌÓÊÑ æÇá áæÌíä æÈíßæä ãÚÊãÏ Úáì İíæ ÇáÊí ÊÚÊãÏ Úáì ÌÇİÇ ÓßÑÈÊ áĞáß áÇÒã äËÈÊ Çä Èí Çã İí ÇáÎØæÉ ÇáÇÊíÉ
+npm install "&&" npm run dev//ÊÈÊ áäÇ ÇáäæÏ ÈÇßÇÌ ãäÌÑ (Çä Èí Çã ) æÊäÔì ãÌáÏ ÇÓãå äæÏãæÏíáÒ İí ÇáãÔÑæÚ ÊÈÚäÇ 
+*******************/
+
+
+php artisan migrate:rollback
+php artisan migrate --seed
+
+php artisan
+php artisan route:list
+php artisan make:migration create_posts_table --create="posts"
+
+composer require --dev xethron/migrations-generator //ãä ÇÌá äŞÏÑ äÍæá ÇáÏÇÊÇ ÈíÓ ÇÓ ßíæ Çá Çáì ãÌÑíÔä
+composer require --dev migrations-generator                                     
+  Did you mean one of these?                    
+      xethron/migrations-generator              
+      oscarafdev/migrations-generator           
+      odan/phinx-migrations-generator           
+      jaguarjack/migration-generator            
+      cycle/schema-migrations-generator
+
+php artisan migrate:generate //ÊÍæíá ÇáÏÇÊÇ ÈíÓ Çáì ãÌÑíÔä ãÈÇÔÑÉ
+
+php artisan schema:dump //íÍæá ÇáÏÇÊÇ ÈíÓ ÇÓ Şíæ Çá Çáì äÓÎÉ ÇÍÊíÇØíÉ 
+
+php artisan schema:dump --prune//íÍæá ÇáÏÇÊÇ ÈíÓ ÇÓ Şíæ Çá Çáì äÓÎÉ ÇÍÊíÇØíÉ  æíÍĞİ ãÌáÏ ÇáãÌÑíÔä
+
+composer require --dev kitloong/laravel-migrations-generator ////ãä ÇÌá äŞÏÑ äÍæá ÇáÏÇÊÇ ÈíÓ ÇÓ ßíæ Çá Çáì ãÌÑíÔä
+
+composer require mcamara/laravel-localization //ãä ÇÌá ÊäÕíÈ ÇßËÑ ãä áÛÉ ááÈÑäÇãÌ
+
+composer create-project --prefer-dist laravel/laravel:"7.*"  gradproject7ver //create laravel project with laravel 7 ver
+
+// ãä ÇÌá ÊËÈíÊ ÇßËÑ ãä áÛÉ ááãÔÑæÚ äÓÊÎÏã 2 ÇæÇãÑ æåí ßÇáÇÊí 
+ 1-)composer require mcamara/laravel-localization //ãä ÇÌá ÊËÈíÊ ãßÊÈÉ ÇááÛÇÊ áÌÚá ÇáãÔÑæÚ íÏÚã ÇßËÑ ãä áÛÉ
+ 2-)php artisan vendor:publish --provider="Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider" //ÈÚÏ ÇáÎØæÉ ÇáÓÇÈŞÉ äÓÊÎÏã åĞÇ ÇáÇãÑ ãä ÇÌá äŞá ãáİ ÇááÛÇÊ æÇÙåÇÑå
+ 
+ php artisan make:model ModuleName
+ php artisan make:controller ControllerName
+ 
+ ÊÚáíãÇÊ ãåãÉ ÌÏÇ ãä ÇÌá ÊÍæíá ŞÇÚÏÉ ÈíÇäÇÊ áÇÑÇİíá Çáì ãæÏíáÒ
+composer require reliese/laravel
+Add the service provider to your config/app.php file Reliese\Coders\CodersServiceProvider::class
+Publish the config file with php artisan vendor:publish --tag=reliese-models
+Make sure your database is correctly configured in config/database.php and .env files.
+And finally issue the command: php artisan code:models
